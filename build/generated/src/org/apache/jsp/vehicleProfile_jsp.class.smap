@@ -1,0 +1,18 @@
+SMAP
+vehicleProfile_jsp.java
+JSP
+*S JSP
+*F
++ 0 vehicleProfile.jsp
+vehicleProfile.jsp
++ 1 header.jsp
+header.jsp
++ 2 navbar.jsp
+navbar.jsp
+*L
+5,15:50
+5#1,21:65
+19#0,2:85
+5#2,42:87
+20#0,51:128
+*E
