@@ -4,26 +4,45 @@
     Author     : ASUS
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="database.dbConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Vehicle profile < vehicle name > </title>
+        <title>Vehicle profile</title>
 
         <!-- STYLESHEETS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
-        <%@include file="header.jsp" %>
+    <body>        
         <%@include file="navbar.jsp" %>
 
-        <div class="container">
-            <h1>Vehicle name here</h1>
-            <h3>vehicle image come here</h3>
-            <div class="container justify-content-center" style="background-color: pink;float: left;">
-                <div class="col-lg-5 justify-content-center" style="background-color: yellow;float: left;margin: 1%;padding: 1%">
+        <div class="container" style="margin-top: 3%;">
+            <a href="vehicles.jsp">< Back </a>
+            <%                try {
+                    String id = request.getParameter("id");
+                    dbConnect dbConnect = new dbConnect();
+                    Connection currentCon = dbConnect.Connect();
+                    String sql = "SELECT * FROM vehicle WHERE product_id=?";
+                    PreparedStatement ps = currentCon.prepareStatement(sql);
+                    ps.setString(1, id);
+                    ResultSet rs = ps.executeQuery();
+                    while (rs.next()) {
+            %>
+            <h1><%=rs.getString("vehicle_name")%></h1>
+            <h3>USD <%=rs.getString("price")%></h3>
+            <p>Image should here</p>
+            <%}
+                } catch (Exception e) {
+                }
+            %>
+            <div class="container justify-content-center">
+                <div class="col-lg-5 justify-content-center">
                     <h4>Parts</h4>
                     <form class="form-inline" action="shoppingCart" method="POST">
                         <table class="table">
@@ -32,9 +51,6 @@
                                 <td>
                                     Paint
                                 </td>
-<!--                                <td>
-                                    <input type="text" name="paint">
-                                </td>-->
                                 <td>
                                     <input type="checkbox" name="addPaint">
                                 </td>
@@ -45,9 +61,9 @@
                                 <td>
                                     Part 02
                                 </td>
-<!--                                <td>
-                                    <input type="text" name="part2">
-                                </td>-->
+                                <!--                                <td>
+                                                                    <input type="text" name="part2">
+                                                                </td>-->
                                 <td>
                                     <input type="checkbox" name="addPart2">
                                 </td>
@@ -61,7 +77,7 @@
                         </table>
                     </form>
                 </div>
-                <div class="col-lg-5 justify-content-center" style="background-color: #007bff;float: left;margin: 1%;padding: 1%;">
+                <div class="col-lg-5 justify-content-center">
                     <h3>Summary</h3>
                     <p>Here the summary of the customized vehicle</p>
                 </div>

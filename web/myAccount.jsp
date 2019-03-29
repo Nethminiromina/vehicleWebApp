@@ -1,6 +1,6 @@
 <%-- 
     Document   : myAccount
-    Created on : Feb 28, 2019, 9:27:49 AM
+    Created on : Mar 28, 2019, 8:39:45 AM
     Author     : ASUS
 --%>
 
@@ -10,12 +10,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Account</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <%@page session="true"%>
     </head>
     <body>
-        <%@page session="true"%>
-        <%@include file="header.jsp" %>
         <%@include file="navbar.jsp" %>
-        <h1>My Account</h1>
-        <h1>Welcome <%=session.getAttribute("name") %></h1>
+        <div class="container" style="margin-top: 5%">
+            <h3>My account</h3><br>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addressBook.jsp">Address Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Update Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Saved Credit cards</a>
+                </li>
+            </ul>
+            <br>
+            <p>Need to be connect with the orders</p>
+        </div>
     </body>
 </html>
