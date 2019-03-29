@@ -6,7 +6,7 @@
 package servlets;
 
 import beans.loginBean;
-import controllers.lgoinCon;
+import controllers.LoginCon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -75,8 +75,8 @@ public class login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String email = request.getParameter("mail");
+        String password = request.getParameter("pass");
 
         HttpSession session = request.getSession();
 
@@ -84,7 +84,7 @@ public class login extends HttpServlet {
         loginBean.setEmail(email);
         loginBean.setPassword(password);
 
-        lgoinCon lgoinCon = new lgoinCon();
+        LoginCon lgoinCon = new LoginCon();
         int result = lgoinCon.login(loginBean);
         if (result > 1) {
             System.out.println("Done");

@@ -6,80 +6,85 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<head>
-    <%@include file="header.jsp" %>
-    <%@include file="navbar.jsp" %>
-</head>
-<body>
+<html>
+    <head>
+        <title>Vehicle</title>
 
-    <!-- SEARCH -->
-    <ul class="nav justify-content-center navbar-dark align-content-center" style="padding: 0.5%">
-        <form class="form-inline justify-content-center col-md-9" action="">
-            <input class="form-control col-md-9" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-        </form>
-    </ul>
-    <!-- END SEARCH --> 
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <style>
+            #sectionimg {
+                width: 100%;
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                background-attachment: fixed;
+                /*filter: blur(1px);*/
+            }
 
-    <!-- DIV BODY-->
-    <div class="container-fluid">
-        <!-- VEHICLES -->
-        <h3>Top Saled Vehicles</h3>
-        <div class="row col-lg-12 align-content-center justify-content-center">
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img/kia_canada.jpg" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">KIA Canada</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="vehicleProfile.jsp" class="btn btn-primary">See Profile</a>
+            #section {
+                width: 100%;
+                height: 100vh;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+                /*background-attachment: fixed;*/
+            }
+        </style>
+    </head>
+    <body>
+        <%@include file="navbar.jsp" %>
+        <div id="sectionimg">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" style="height: 100vh;">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/audi-automobile-car-lights-1149831.jpg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Hi</h1>
+                            <p>hi</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/automobiles-automotives-black-and-white-70912.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>THis is a caption</h5>
+                            <p>...</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img/lamborgini.png" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img_avatar1.png" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- SELLERS -->
-        <h3>Top Sellers</h3>
-        <div class="row col-lg-12 align-content-center justify-content-center">
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img/kia_canada.jpg" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">KIA Canada</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img/lamborgini.png" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
-            </div>
-            <div class="card align-content-center justify-content-center" style="width:400px">
-                <img class="card-img-top align-content-center justify-content-center" src="img_avatar1.png" alt="Card image" style="width: 300px;">
-                <div class="card-body align-content-center justify-content-center">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text.</p>
-                    <a href="#" class="btn btn-primary">See Profile</a>
-                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </div>
-    <!-- END DIV BODY-->
+    <div id="section" style="background-color: #0c5460"></div>
+    <div id="sectionimg" style="background-image: url('img/action-asphalt-auto-racing-274974.jpg')"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 3000
+        })
+    </script>
+    <script>
+
+    </script>
+
 </body>
+</html>

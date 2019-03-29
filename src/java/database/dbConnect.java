@@ -27,7 +27,7 @@ public class dbConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");                    
             con = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected");
+//            System.out.println("Connected");
             return con;
         } catch (SQLException e) {
             System.out.println("Error :" + e);
